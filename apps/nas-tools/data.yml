@@ -1,0 +1,19 @@
+name: NasTools
+tags:
+    - 多媒体
+title: NAS媒体库管理工具
+description: 本维护项目为nas-tools维护项目非官方项目；
+additionalProperties:
+    key: nastools
+    name: NasTools
+    tags:
+        - Media
+    shortDescZh: NAS媒体库管理工具
+    shortDescEn: NAS media library management tool
+    type: tool
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://github.com/hsuyelin/nas-tools
+    github: https://github.com/hsuyelin/nas-tools
+    document: https://github.com/hsuyelin/nas-tools
