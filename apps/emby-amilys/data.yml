@@ -1,14 +1,14 @@
 name: Emby Amilys版
 tags:
     - 多媒体
-title: 一个免费的个人媒体服务器(开心版)
-description: 一个免费的个人媒体服务器
+title: Emby Amilys版
+description: emby自供版 交流群：433493451
 additionalProperties:
     key: embyamilys
     name: Emby Amilys版
     tags:
         - Media
-    shortDescZh: 一个免费的个人媒体服务器
+    shortDescZh: 一个免费的个人媒体服务器Emby Amilys版
     shortDescEn: A free personal media server
     type: tool
     crossVersionUpdate: true
