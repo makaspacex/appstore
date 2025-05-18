@@ -1,0 +1,19 @@
+name: PDFMathTranslate
+tags:
+    - 大模型
+title: PDFMathTranslate
+description: 科学 PDF 文档翻译及双语对照工具
+additionalProperties:
+    key: PDFMathTranslate
+    name: PDFMathTranslate
+    tags:
+        - Media
+    shortDescZh: 科学 PDF 文档翻译及双语对照工具
+    shortDescEn: A free personal media server
+    type: tool
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/README_zh-CN.md
+    github: https://github.com/Byaidu/PDFMathTranslate
+    document: https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/README_zh-CN.md
