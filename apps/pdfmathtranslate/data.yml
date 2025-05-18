@@ -1,11 +1,11 @@
-name: PDFMathTranslate
+name: pdfmathtranslate
 tags:
     - 大模型
-title: PDFMathTranslate
+title: pdfmathtranslate
 description: 科学 PDF 文档翻译及双语对照工具
 additionalProperties:
-    key: PDFMathTranslate
-    name: PDFMathTranslate
+    key: pdfmathtranslate
+    name: pdfmathtranslate
     tags:
         - Media
     shortDescZh: 科学 PDF 文档翻译及双语对照工具

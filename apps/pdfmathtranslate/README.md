@@ -1,393 +1,312 @@
-<!-- # Yet Another Document Translator -->
-
 <div align="center">
-<!-- <img src="https://s.immersivetranslate.com/assets/r2-uploads/images/babeldoc-banner.png" width="320px"  alt="YADT"/> -->
 
-<br/>
+[English](../README.md) | 简体中文 | [繁體中文](README_zh-TW.md) | [日本語](README_ja-JP.md)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://s.immersivetranslate.com/assets/uploads/babeldoc-big-logo-darkmode-with-transparent-background-IKuNO1.svg" width="320px" alt="BabelDOC"/>
-  <img src="https://s.immersivetranslate.com/assets/uploads/babeldoc-big-logo-with-transparent-background-2xweBr.svg" width="320px" alt="BabelDOC"/>
-</picture>
+<img src="./images/banner.png" width="320px"  alt="PDF2ZH"/>  
 
-<!-- <h2 id="title">BabelDOC</h2> -->
+<h2 id="title">PDFMathTranslate</h2>
 
 <p>
   <!-- PyPI -->
-  <a href="https://pypi.org/project/BabelDOC/">
-    <img src="https://img.shields.io/pypi/v/BabelDOC"></a>
-  <a href="https://pepy.tech/projects/BabelDOC">
-    <img src="https://static.pepy.tech/badge/BabelDOC"></a>
-  <!-- <a href="https://github.com/funstory-ai/BabelDOC/pulls">
-    <img src="https://img.shields.io/badge/contributions-welcome-green"></a> -->
+  <a href="https://pypi.org/project/pdf2zh/">
+    <img src="https://img.shields.io/pypi/v/pdf2zh"/></a>
+  <a href="https://pepy.tech/projects/pdf2zh">
+    <img src="https://static.pepy.tech/badge/pdf2zh"></a>
+  <a href="https://hub.docker.com/repository/docker/byaidu/pdf2zh">
+    <img src="https://img.shields.io/docker/pulls/byaidu/pdf2zh"></a>
   <!-- License -->
   <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/funstory-ai/BabelDOC"></a>
+    <img src="https://img.shields.io/github/license/Byaidu/PDFMathTranslate"/></a>
+  <a href="https://huggingface.co/spaces/reycn/PDFMathTranslate-Docker">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97-Online%20Demo-FF9E0D"/></a>
+  <a href="https://www.modelscope.cn/studios/AI-ModelScope/PDFMathTranslate">
+    <img src="https://img.shields.io/badge/ModelScope-Demo-blue"></a>
+  <a href="https://github.com/Byaidu/PDFMathTranslate/pulls">
+    <img src="https://img.shields.io/badge/contributions-welcome-green"/></a>
+  <a href="https://gitcode.com/Byaidu/PDFMathTranslate/overview">
+    <img src="https://gitcode.com/Byaidu/PDFMathTranslate/star/badge.svg"></a>
   <a href="https://t.me/+Z9_SgnxmsmA5NzBl">
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-squeare&logo=telegram&logoColor=white"></a>
+    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-squeare&logo=telegram&logoColor=white"/></a>
 </p>
 
-<a href="https://trendshift.io/repositories/13358" target="_blank"><img src="https://trendshift.io/api/badge/repositories/13358" alt="funstory-ai%2FBabelDOC | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/12424" target="_blank"><img src="https://trendshift.io/api/badge/repositories/12424" alt="Byaidu%2FPDFMathTranslate | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 </div>
 
-PDF scientific paper translation and bilingual comparison library.
+科学 PDF 文档翻译及双语对照工具
 
-- **Online Service**: Beta version launched [Immersive Translate - BabelDOC](https://app.immersivetranslate.com/babel-doc/) 1000 free pages per month.
-- **Self-deployment**: [PDFMathTranslate](https://github.com/Byaidu/PDFMathTranslate) 1.9.3+ Experimental support for BabelDOC, available for self-deployment + WebUI with more translation services.
-- Provides a simple [command line interface](#getting-started).
-- Provides a [Python API](#python-api).
-- Mainly designed to be embedded into other programs, but can also be used directly for simple translation tasks.
+- 📊 保留公式、图表、目录和注释 *([预览效果](#preview))*
+- 🌐 支持 [多种语言](./ADVANCED.md#language) 和 [诸多翻译服务](./ADVANCED.md#services)
+- 🤖 提供 [命令行工具](#usage)，[图形交互界面](#gui)，以及 [容器化部署](#docker)
 
-> [!TIP]
->
-> How to use BabelDOC in Zotero
->
-> 1. Immersive Translate Pro members can use the [immersive-translate/zotero-immersivetranslate](https://github.com/immersive-translate/zotero-immersivetranslate) plugin
->
-> 2. PDFMathTranslate self-deployed users can use the [guaguastandup/zotero-pdf2zh](https://github.com/guaguastandup/zotero-pdf2zh) plugin
+欢迎在 [GitHub Issues](https://github.com/Byaidu/PDFMathTranslate/issues) 或 [Telegram 用户群](https://t.me/+Z9_SgnxmsmA5NzBl)
 
-[Supported Language](https://funstory-ai.github.io/BabelDOC/supported_languages/)
+有关如何贡献的详细信息，请查阅 [贡献指南](https://github.com/Byaidu/PDFMathTranslate/wiki/Contribution-Guide---%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97)
 
-## Preview
+<h2 id="updates">更新</h2>
 
+- [2025 年 2 月 22 日] 更好的发布 CI 和精心打包的 windows-amd64 exe (由 [@awwaawwa](https://github.com/awwaawwa) 提供)
+- [2024 年 12 月 24 日] 翻译器现在支持在 [Xinference](https://github.com/xorbitsai/inference) 上使用本地模型 _(由 [@imClumsyPanda](https://github.com/imClumsyPanda) 提供)_
+- [2024 年 12 月 19 日] 现在支持非 PDF/A 文档，使用 `-cp` _(由 [@reycn](https://github.com/reycn) 提供)_
+- [2024 年 12 月 13 日] 额外支持后端 _(由 [@YadominJinta](https://github.com/YadominJinta) 提供)_
+- [2024 年 12 月 10 日] 翻译器现在支持 Azure 上的 OpenAI 模型 _(由 [@yidasanqian](https://github.com/yidasanqian) 提供)_
+
+<h2 id="preview">预览</h2>
 <div align="center">
-<img src="https://s.immersivetranslate.com/assets/r2-uploads/images/babeldoc-preview.png" width="80%"/>
+<img src="./images/preview.gif" width="80%"/>
 </div>
 
-## We are hiring
+<h2 id="demo">在线演示 🌟</h2>
 
-See details: [EN](https://github.com/funstory-ai/jobs) | [ZH](https://github.com/funstory-ai/jobs/blob/main/README_ZH.md)
+<h2 id="demo">在线服务 🌟</h2>
 
-## Getting Started
+您可以通过以下演示尝试我们的应用程序：
 
-### Install from PyPI
+- [公共免费服务](https://pdf2zh.com/) 在线使用，无需安装 _(推荐)_。
+- [沉浸式翻译 - BabelDOC](https://app.immersivetranslate.com/babel-doc/) 每月免费 1000 页 _(推荐)_
+- [在 HuggingFace 上托管的演示](https://huggingface.co/spaces/reycn/PDFMathTranslate-Docker)
+- [在 ModelScope 上托管的演示](https://www.modelscope.cn/studios/AI-ModelScope/PDFMathTranslate) 无需安装。
 
-We recommend using the Tool feature of [uv](https://github.com/astral-sh/uv) to install yadt.
+请注意演示的计算资源有限，请避免滥用它们。
+<h2 id="install">安装和使用</h2>
 
-1. First, you need to refer to [uv installation](https://github.com/astral-sh/uv#installation) to install uv and set up the `PATH` environment variable as prompted.
+### 方法
 
-2. Use the following command to install yadt:
+针对不同的使用案例，我们提供不同的方法来使用我们的程序：
 
-```bash
-uv tool install --python 3.12 BabelDOC
+<details open>
+  <summary>1. UV 安装</summary>
 
-babeldoc --help
-```
+1. 安装 Python (3.10 <= 版本 <= 3.12)
+2. 安装我们的包：
 
-3. Use the `babeldoc` command. For example:
-
-```bash
-babeldoc --bing  --files example.pdf
-
-# multiple files
-babeldoc --bing  --files example1.pdf --files example2.pdf
-```
-
-### Install from Source
-
-We still recommend using [uv](https://github.com/astral-sh/uv) to manage virtual environments.
-
-1. First, you need to refer to [uv installation](https://github.com/astral-sh/uv#installation) to install uv and set up the `PATH` environment variable as prompted.
-
-2. Use the following command to install yadt:
-
-```bash
-# clone the project
-git clone https://github.com/funstory-ai/BabelDOC
-
-# enter the project directory
-cd BabelDOC
-
-# install dependencies and run babeldoc
-uv run babeldoc --help
-```
-
-3. Use the `uv run babeldoc` command. For example:
-
-```bash
-uv run babeldoc --files example.pdf --openai --openai-model "gpt-4o-mini" --openai-base-url "https://api.openai.com/v1" --openai-api-key "your-api-key-here"
-
-# multiple files
-uv run babeldoc --files example.pdf --files example2.pdf --openai --openai-model "gpt-4o-mini" --openai-base-url "https://api.openai.com/v1" --openai-api-key "your-api-key-here"
-```
-
-> [!TIP]
-> The absolute path is recommended.
-
-## Advanced Options
-
-> [!NOTE]
-> This CLI is mainly for debugging purposes. Although end users can use this CLI to translate files, we do not provide any technical support for this purpose.
->
-> End users should directly use **Online Service**: Beta version launched [Immersive Translate - BabelDOC](https://app.immersivetranslate.com/babel-doc/) 1000 free pages per month.
->
-> End users who need self-deployment should use [PDFMathTranslate](https://github.com/Byaidu/PDFMathTranslate)
-> 
-> If you find that an option is not listed below, it means that this option is a debugging option for maintainers. Please do not use these options.
-
-
-### Language Options
-
-- `--lang-in`, `-li`: Source language code (default: en)
-- `--lang-out`, `-lo`: Target language code (default: zh)
-
-> [!TIP]
-> Currently, this project mainly focuses on English-to-Chinese translation, and other scenarios have not been tested yet.
-> 
-> (2025.3.1 update): Basic English target language support has been added, primarily to minimize line breaks within words([0-9A-Za-z]+).
-> 
-> [HELP WANTED: Collecting word regular expressions for more languages](https://github.com/funstory-ai/BabelDOC/issues/129)
-
-### PDF Processing Options
-
-- `--files`: One or more file paths to input PDF documents.
-- `--pages`, `-p`: Specify pages to translate (e.g., "1,2,1-,-3,3-5"). If not set, translate all pages
-- `--split-short-lines`: Force split short lines into different paragraphs (may cause poor typesetting & bugs)
-- `--short-line-split-factor`: Split threshold factor (default: 0.8). The actual threshold is the median length of all lines on the current page \* this factor
-- `--skip-clean`: Skip PDF cleaning step
-- `--dual-translate-first`: Put translated pages first in dual PDF mode (default: original pages first)
-- `--disable-rich-text-translate`: Disable rich text translation (may help improve compatibility with some PDFs)
-- `--enhance-compatibility`: Enable all compatibility enhancement options (equivalent to --skip-clean --dual-translate-first --disable-rich-text-translate)
-- `--use-alternating-pages-dual`: Use alternating pages mode for dual PDF. When enabled, original and translated pages are arranged in alternate order. When disabled (default), original and translated pages are shown side by side on the same page.
-- `--watermark-output-mode`: Control watermark output mode: 'watermarked' (default) adds watermark to translated PDF, 'no_watermark' doesn't add watermark, 'both' outputs both versions.
-- `--max-pages-per-part`: Maximum number of pages per part for split translation. If not set, no splitting will be performed.
-- `--no-watermark`: [DEPRECATED] Use --watermark-output-mode=no_watermark instead.
-- `--translate-table-text`: Translate table text (experimental, default: False)
-- `--skip-scanned-detection`: Skip scanned document detection (default: False). When using split translation, only the first part performs detection if not skipped.
-- `--ocr-workaround`: Use OCR workaround (default: False). When enabled, the tool will use OCR to detect text and fill background for scanned PDF.
-- `--working-dir`: Working directory for translation. If not set, use temp directory.
-
-> [!TIP]
-> - Both `--skip-clean` and `--dual-translate-first` may help improve compatibility with some PDF readers
-> - `--disable-rich-text-translate` can also help with compatibility by simplifying translation input
-> - However, using `--skip-clean` will result in larger file sizes
-> - If you encounter any compatibility issues, try using `--enhance-compatibility` first
-> - Use `--max-pages-per-part` for large documents to split them into smaller parts for translation and automatically merge them back.
-> - Use `--skip-scanned-detection` to speed up processing when you know your document is not a scanned PDF.
-> - Use `--ocr-workaround` to fill background for scanned PDF. (Current assumption: background is pure white, text is pure black, this option will also auto enable `--skip-scanned-detection`)
-
-### Translation Service Options
-
-- `--qps`: QPS (Queries Per Second) limit for translation service (default: 4)
-- `--ignore-cache`: Ignore translation cache and force retranslation
-- `--no-dual`: Do not output bilingual PDF files
-- `--no-mono`: Do not output monolingual PDF files
-- `--min-text-length`: Minimum text length to translate (default: 5)
-- `--openai`: Use OpenAI for translation (default: False)
-- `--custom-system-prompt`: Custom system prompt for translation.
-- `--add-formula-placehold-hint`: Add formula placeholder hint for translation. (Currently not recommended, it may affect translation quality, default: False)
-
-> [!TIP]
->
-> 1. Currently, only OpenAI-compatible LLM is supported. For more translator support, please use [PDFMathTranslate](https://github.com/Byaidu/PDFMathTranslate).
-> 2. It is recommended to use models with strong compatibility with OpenAI, such as: `glm-4-flash`, `deepseek-chat`, etc.
-> 3. Currently, it has not been optimized for traditional translation engines like Bing/Google, it is recommended to use LLMs.
-> 4. You can use [litellm](https://github.com/BerriAI/litellm) to access multiple models.
-> 5. `--custom-system-prompt`: It is mainly used to add the `/no_think` instruction of Qwen 3 in the prompt. For example: `--custom-system-prompt "/no_think You are a professional, authentic machine translation engine."`
-
-### OpenAI Specific Options
-
-- `--openai-model`: OpenAI model to use (default: gpt-4o-mini)
-- `--openai-base-url`: Base URL for OpenAI API
-- `--openai-api-key`: API key for OpenAI service
-
-> [!TIP]
->
-> 1. This tool supports any OpenAI-compatible API endpoints. Just set the correct base URL and API key. (e.g. `https://xxx.custom.xxx/v1`)
-> 2. For local models like Ollama, you can use any value as the API key (e.g. `--openai-api-key a`).
-
-### Output Control
-
-- `--output`, `-o`: Output directory for translated files. If not set, use current working directory.
-- `--debug`, `-d`: Enable debug logging level and export detailed intermediate results in `~/.cache/yadt/working`.
-- `--report-interval`: Progress report interval in seconds (default: 0.1).
-
-### Offline Assets Management
-
-- `--generate-offline-assets`: Generate an offline assets package in the specified directory. This creates a zip file containing all required models and fonts.
-- `--restore-offline-assets`: Restore an offline assets package from the specified file. This extracts models and fonts from a previously generated package.
-
-> [!TIP]
-> 
-> 1. Offline assets packages are useful for environments without internet access or to speed up installation on multiple machines.
-> 2. Generate a package once with `babeldoc --generate-offline-assets /path/to/output/dir` and then distribute it.
-> 3. Restore the package on target machines with `babeldoc --restore-offline-assets /path/to/offline_assets_*.zip`.
-> 4. The offline assets package name cannot be modified because the file list hash is encoded in the name.
-> 5. If you provide a directory path to `--restore-offline-assets`, the tool will automatically look for the correct offline assets package file in that directory.
-> 6. The package contains all necessary fonts and models required for document processing, ensuring consistent results across different environments.
-> 7. The integrity of all assets is verified using SHA3-256 hashes during both packaging and restoration.
-> 8. If you're deploying in an air-gapped environment, make sure to generate the package on a machine with internet access first.
-
-### Configuration File
-
-- `--config`, `-c`: Configuration file path. Use the TOML format.
-
-Example Configuration:
-
-```toml
-[babeldoc]
-# Basic settings
-debug = true
-lang-in = "en-US"
-lang-out = "zh-CN"
-qps = 10
-output = "/path/to/output/dir"
-
-# PDF processing options
-split-short-lines = false
-short-line-split-factor = 0.8
-skip-clean = false
-dual-translate-first = false
-disable-rich-text-translate = false
-use-alternating-pages-dual = false
-watermark-output-mode = "watermarked"  # Choices: "watermarked", "no_watermark", "both"
-max-pages-per-part = 50  # Automatically split the document for translation and merge it back.
-# no-watermark = false  # DEPRECATED: Use watermark-output-mode instead
-skip-scanned-detection = false  # Skip scanned document detection for faster processing
-
-# Translation service
-openai = true
-openai-model = "gpt-4o-mini"
-openai-base-url = "https://api.openai.com/v1"
-openai-api-key = "your-api-key-here"
-
-# Output control
-no-dual = false
-no-mono = false
-min-text-length = 5
-report-interval = 0.5
-
-# Offline assets management
-# Uncomment one of these options as needed:
-# generate-offline-assets = "/path/to/output/dir"
-# restore-offline-assets = "/path/to/offline_assets_package.zip"
-```
-
-## Python API
-
-> [!TIP]
->
-> 1. Before pdf2zh 2.0 is released, you can temporarily use BabelDOC's Python API. However, after pdf2zh 2.0 is released, please directly use pdf2zh's Python API.
->
-> 2. This project's Python API does not guarantee any compatibility. However, the Python API from pdf2zh will guarantee a certain level of compatibility.
->
-> 3. We do not provide any technical support for the BabelDOC API.
->
-> 4. When performing secondary development, please refer to [pdf2zh 2.0 high level](https://github.com/awwaawwa/PDFMathTranslate/blob/v2-rc/pdf2zh/high_level.py) and ensure that BabelDOC runs in a subprocess.
-
-You can refer to the example in [main.py](https://github.com/funstory-ai/yadt/blob/main/babeldoc/main.py) to use BabelDOC's Python API.
-
-Please note:
-
-1. Make sure call `babeldoc.high_level.init()` before using the API
-
-2. The current `TranslationConfig` does not fully validate input parameters, so you need to ensure the validity of input parameters
-
-3. For offline assets management, you can use the following functions:
-   ```python
-   # Generate an offline assets package
-   from pathlib import Path
-   import babeldoc.assets.assets
-   
-   # Generate package to a specific directory
-   # path is optional, default is ~/.cache/babeldoc/assets/offline_assets_{hash}.zip
-   babeldoc.assets.assets.generate_offline_assets_package(Path("/path/to/output/dir"))
-   
-   # Restore from a package file
-   # path is optional, default is ~/.cache/babeldoc/assets/offline_assets_{hash}.zip
-   babeldoc.assets.assets.restore_offline_assets_package(Path("/path/to/offline_assets_package.zip"))
-   
-   # You can also restore from a directory containing the offline assets package
-   # The tool will automatically find the correct package file based on the hash
-   babeldoc.assets.assets.restore_offline_assets_package(Path("/path/to/directory"))
+   ```bash
+   pip install uv
+   uv tool install --python 3.12 pdf2zh
    ```
 
+3. 执行翻译，文件生成在 [当前工作目录](https://chatgpt.com/share/6745ed36-9acc-800e-8a90-59204bd13444)：
+
+   ```bash
+   pdf2zh document.pdf
+   ```
+
+</details>
+
+<details>
+  <summary>2. Windows exe</summary>
+
+1. 从 [发布页面](https://github.com/Byaidu/PDFMathTranslate/releases) 下载 pdf2zh-version-win64.zip
+
+2. 解压缩并双击 `pdf2zh.exe` 运行。
+
+</details>
+
+<details>
+  <summary id="gui">3. 图形用户界面</summary>
+1. 安装 Python (3.10 <= 版本 <= 3.12)
+2. 安装我们的包：
+
+```bash
+pip install pdf2zh
+```
+
+3. 在浏览器中开始使用：
+
+   ```bash
+   pdf2zh -i
+   ```
+
+4. 如果您的浏览器没有自动启动，请访问
+
+   ```bash
+   http://localhost:7860/
+   ```
+
+   <img src="./images/gui.gif" width="500"/>
+
+有关更多详细信息，请参阅 [GUI 文档](./README_GUI.md)。
+
+</details>
+
+<details>
+  <summary id="docker">4. Docker</summary>
+
+1. 拉取并运行：
+
+   ```bash
+   docker pull byaidu/pdf2zh
+   docker run -d -p 7860:7860 byaidu/pdf2zh
+   ```
+
+2. 在浏览器中打开：
+
+   ```
+   http://localhost:7860/
+   ```
+
+对于云服务上的 docker 部署：
+
+<div>
+<a href="https://www.heroku.com/deploy?template=https://github.com/Byaidu/PDFMathTranslate">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="部署" height="26"></a>
+<a href="https://render.com/deploy">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="部署到 Koyeb" height="26"></a>
+<a href="https://zeabur.com/templates/5FQIGX?referralCode=reycn">
+  <img src="https://zeabur.com/button.svg" alt="在 Zeabur 上部署" height="26"></a>
+<a href="https://template.sealos.io/deploy?templateName=pdf2zh">
+  <img src="https://sealos.io/Deploy-on-Sealos.svg" alt="在 Sealos 上部署" height="26"></a>
+<a href="https://app.koyeb.com/deploy?type=git&builder=buildpack&repository=github.com/Byaidu/PDFMathTranslate&branch=main&name=pdf-math-translate">
+  <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="部署到 Koyeb" height="26"></a>
+</div>
+
+</details>
+
+<details>
+  <summary>5. Zotero 插件</summary>
+
+有关更多细节，请参见 [Zotero PDF2zh](https://github.com/guaguastandup/zotero-pdf2zh)。
+
+</details>
+
+<details>
+  <summary>6. 命令行</summary>
+
+1. 已安装 Python（3.10 <= 版本 <= 3.12）
+2. 安装我们的包：
+
+   ```bash
+   pip install pdf2zh
+   ```
+
+3. 执行翻译，文件生成在 [当前工作目录](https://chatgpt.com/share/6745ed36-9acc-800e-8a90-59204bd13444):
+
+   ```bash
+   pdf2zh document.pdf
+   ```
+
+</details>
+
 > [!TIP]
-> 
-> 1. The offline assets package name cannot be modified because the file list hash is encoded in the name.
-> 2. When using in production environments, it's recommended to pre-generate the assets package and include it with your application distribution.
-> 3. The package verification ensures that all required assets are intact and match their expected checksums.
+>
+> - 如果你使用 Windows 并在下载后无法打开文件，请安装 [vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe) 并重试。
+>
+> - 如果你无法访问 Docker Hub，请尝试在 [GitHub 容器注册中心](https://github.com/Byaidu/PDFMathTranslate/pkgs/container/pdfmathtranslate) 上使用该镜像。
+> ```bash
+> docker pull ghcr.io/byaidu/pdfmathtranslate
+> docker run -d -p 7860:7860 ghcr.io/byaidu/pdfmathtranslate
+> ```
 
-## Background
+### 无法安装？
 
-There are a lot projects and teams working on to make document editing and translating easier like:
+当前程序在工作前需要一个 AI 模型 (`wybxc/DocLayout-YOLO-DocStructBench-onnx`)，一些用户由于网络问题无法下载。如果你在下载此模型时遇到问题，我们提供以下环境变量的解决方法：
 
-- [mathpix](https://mathpix.com/)
-- [Doc2X](https://doc2x.noedgeai.com/)
-- [minerU](https://github.com/opendatalab/MinerU)
-- [PDFMathTranslate](https://github.com/funstory-ai/yadt)
+```shell
+set HF_ENDPOINT=https://hf-mirror.com
+```
 
-There are also some solutions to solve specific parts of the problem like:
+对于 PowerShell 用户：
 
-- [layoutreader](https://github.com/microsoft/unilm/tree/master/layoutreader): the read order of the text block in a pdf
-- [Surya](https://github.com/surya-is/surya): the structure of the pdf
+```shell
+$env:HF_ENDPOINT = https://hf-mirror.com
+```
 
-This project hopes to promote a standard pipeline and interface to solve the problem.
+如果此解决方案对您无效或您遇到其他问题，请参阅 [常见问题解答](https://github.com/Byaidu/PDFMathTranslate/wiki#-faq--%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)。
 
-In fact, there are two main stages of a PDF parser or translator:
 
-- **Parsing**: A stage of parsing means to get the structure of the pdf such as text blocks, images, tables, etc.
-- **Rendering**: A stage of rendering means to render the structure into a new pdf or other format.
+<h2 id="usage">高级选项</h2>
 
-For a service like mathpix, it will parse the pdf into a structure may be in a XML format, and then render them using a single column reader order as [layoutreader](https://github.com/microsoft/unilm/tree/master/layoutreader) does. The bad news is that the original structure lost.
+在命令行中执行翻译命令，在当前工作目录下生成译文文档 `example-mono.pdf` 和双语对照文档 `example-dual.pdf`，默认使用 Google 翻译服务，更多支持的服务在[这里](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#services))。
 
-Some people will use Adobe PDF Parser because it will generate a Word document and it keeps the original structure. But it is somewhat expensive.
-And you know, a pdf or word document is not a good format for reading in mobile devices.
+<img src="./images/cmd.explained.png" width="580px"  alt="cmd"/>  
 
-We offer an intermediate representation of the results from parser and can be rendered into a new pdf or other format. The pipeline is also a plugin-based system which everybody can add their new model, ocr, renderer, etc.
+在下表中，我们列出了所有高级选项供参考：
 
-## Roadmap
+| 选项         | 功能                                                                                                          | 示例                                           |
+| ------------ | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| files        | 本地文件                                                                                                     | `pdf2zh ~/local.pdf`                           |
+| links        | 在线文件                                                                                                     | `pdf2zh http://arxiv.org/paper.pdf`            |
+| `-i`         | [进入 GUI](#gui)                                                                                            | `pdf2zh -i`                                    |
+| `-p`         | [部分文档翻译](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#partial)                | `pdf2zh example.pdf -p 1`                      |
+| `-li`        | [源语言](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#languages)                    | `pdf2zh example.pdf -li en`                    |
+| `-lo`        | [目标语言](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#languages)                  | `pdf2zh example.pdf -lo zh`                    |
+| `-s`         | [翻译服务](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#services)                   | `pdf2zh example.pdf -s deepl`                  |
+| `-t`         | [多线程](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#threads)                      | `pdf2zh example.pdf -t 1`                      |
+| `-o`         | 输出目录                                                                                                     | `pdf2zh example.pdf -o output`                 |
+| `-f`, `-c`   | [异常](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#exceptions)                     | `pdf2zh example.pdf -f "(MS.*)"`               |
+| `-cp`        | 兼容模式                                                                                                     | `pdf2zh example.pdf --compatible`              |
+| `--share`    | 公开链接                                                                                                     | `pdf2zh -i --share`                            |
+| `--authorized` | [授权](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#auth)                         | `pdf2zh -i --authorized users.txt [auth.html]` |
+| `--prompt`   | [自定义提示](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#prompt)                   | `pdf2zh --prompt [prompt.txt]`                 |
+| `--onnx`     | [使用自定义 DocLayout-YOLO ONNX 模型]                                                                        | `pdf2zh --onnx [onnx/model/path]`              |
+| `--serverport` | [使用自定义 WebUI 端口]                                                                                    | `pdf2zh --serverport 7860`                     |
+| `--dir`      | [批量翻译]                                                                                                   | `pdf2zh --dir /path/to/translate/`             |
+| `--config`   | [配置文件](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#cofig)                       | `pdf2zh --config /path/to/config/config.json`  |
+| `--serverport` | [自定义 gradio 服务器端口]                                                                                 | `pdf2zh --serverport 7860`                     |
+| `--babeldoc`| 使用实验性后端 [BabelDOC](https://funstory-ai.github.io/BabelDOC/) 翻译 |`pdf2zh --babeldoc` -s openai example.pdf|
 
-- [ ] Add line support
-- [ ] Add table support
-- [ ] Add cross-page/cross-column paragraph support
-- [ ] More advanced typesetting features
-- [ ] Outline support
-- [ ] ...
+有关详细说明，请参阅我们的文档 [高级用法](./ADVANCED.md)，以获取每个选项的完整列表。
 
-Our first 1.0 version goal is to finish a translation from [PDF Reference, Version 1.7](https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/pdfreference1.7old.pdf) to the following language version:
+<h2 id="downstream">二次开发 (API)</h2>
 
-- Simplified Chinese
-- Traditional Chinese
-- Japanese
-- Spanish
+当前的 pdf2zh API 暂时已弃用。API 将在 [pdf2zh 2.0](https://github.com/Byaidu/PDFMathTranslate/issues/586)发布后重新提供。对于需要程序化访问的用户，请使用[BabelDOC](https://github.com/funstory-ai/BabelDOC)的 `babeldoc.high_level.async_translate` 函数。
 
-And meet the following requirements:
+API 暂时弃用意味着：相关代码暂时不会被移除，但不会提供技术支持，也不会修复 bug。
 
-- layout error less than 1%
-- content loss less than 1%
+<!-- 对于下游应用程序，请参阅我们的文档 [API 详细信息](./APIS.md)，以获取更多信息：
+- [Python API](./APIS.md#api-python)，如何在其他 Python 程序中使用该程序
+- [HTTP API](./APIS.md#api-http)，如何与已安装该程序的服务器进行通信 -->
 
-## Known Issues
+<h2 id="todo">待办事项</h2>
 
-1. Parsing errors in the author and reference sections; they get merged into one paragraph after translation.
-2. Lines are not supported.
-3. Does not support drop caps.
-4. Large pages will be skipped.
+- [ ] 使用基于 DocLayNet 的模型解析布局，[PaddleX](https://github.com/PaddlePaddle/PaddleX/blob/17cc27ac3842e7880ca4aad92358d3ef8555429a/paddlex/repo_apis/PaddleDetection_api/object_det/official_categories.py#L81)，[PaperMage](https://github.com/allenai/papermage/blob/9cd4bb48cbedab45d0f7a455711438f1632abebe/README.md?plain=1#L102)，[SAM2](https://github.com/facebookresearch/sam2)
 
-## How to Contribute
+- [ ] 修复页面旋转、目录、列表格式
 
-We encourage you to contribute to YADT! Please check out the [CONTRIBUTING](https://github.com/funstory-ai/yadt/blob/main/docs/CONTRIBUTING.md) guide.
+- [ ] 修复旧论文中的像素公式
 
-Everyone interacting in YADT and its sub-projects' codebases, issue trackers, chat rooms, and mailing lists is expected to follow the YADT [Code of Conduct](https://github.com/funstory-ai/yadt/blob/main/docs/CODE_OF_CONDUCT.md).
+- [ ] 异步重试，除了 KeyboardInterrupt
 
-[Immersive Translation](https://immersivetranslate.com) sponsors monthly Pro membership redemption codes for active contributors to this project, see details at: [CONTRIBUTOR_REWARD.md](https://github.com/funstory-ai/BabelDOC/blob/main/docs/CONTRIBUTOR_REWARD.md)
+- [ ] 针对西方语言的 Knuth–Plass 算法
 
-## Acknowledgements
+- [ ] 支持非 PDF/A 文件
 
-- [PDFMathTranslate](https://github.com/Byaidu/PDFMathTranslate)
-- [DocLayout-YOLO](https://github.com/opendatalab/DocLayout-YOLO)
-- [pdfminer](https://github.com/pdfminer/pdfminer.six)
-- [PyMuPDF](https://github.com/pymupdf/PyMuPDF)
-- [Asynchronize](https://github.com/multimeric/Asynchronize/tree/master?tab=readme-ov-file)
-- [PriorityThreadPoolExecutor](https://github.com/oleglpts/PriorityThreadPoolExecutor)
+- [ ] [Zotero](https://github.com/zotero/zotero) 和 [Obsidian](https://github.com/obsidianmd/obsidian-releases) 的插件
 
-<h2 id="star_hist">Star History</h2>
+<h2 id="acknowledgement">致谢</h2>
 
-<a href="https://star-history.com/#funstory-ai/babeldoc&Date">
+- [Immersive Translation](https://immersivetranslate.com) 为此项目的活跃贡献者提供每月的专业会员兑换码，详细信息请查看：[CONTRIBUTOR_REWARD.md](https://github.com/funstory-ai/BabelDOC/blob/main/docs/CONTRIBUTOR_REWARD.md)
+
+- 文档合并：[PyMuPDF](https://github.com/pymupdf/PyMuPDF)
+
+- 文档解析：[Pdfminer.six](https://github.com/pdfminer/pdfminer.six)
+
+- 文档提取：[MinerU](https://github.com/opendatalab/MinerU)
+
+- 文档预览：[Gradio PDF](https://github.com/freddyaboulton/gradio-pdf)
+
+- 多线程翻译：[MathTranslate](https://github.com/SUSYUSTC/MathTranslate)
+
+- 布局解析：[DocLayout-YOLO](https://github.com/opendatalab/DocLayout-YOLO)
+
+- 文档标准：[PDF Explained](https://zxyle.github.io/PDF-Explained/)，[PDF Cheat Sheets](https://pdfa.org/resource/pdf-cheat-sheets/)
+
+- 多语言字体：[Go Noto Universal](https://github.com/satbyy/go-noto-universal)
+
+<h2 id="contrib">贡献者</h2>
+
+<a href="https://github.com/Byaidu/PDFMathTranslate/graphs/contributors">
+  <img src="https://opencollective.com/PDFMathTranslate/contributors.svg?width=890&button=false" />
+</a>
+
+![Alt](https://repobeats.axiom.co/api/embed/dfa7583da5332a11468d686fbd29b92320a6a869.svg "Repobeats analytics image")
+
+<h2 id="star_hist">星标历史</h2>
+
+<a href="https://star-history.com/#Byaidu/PDFMathTranslate&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=funstory-ai/babeldoc&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=funstory-ai/babeldoc&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=funstory-ai/babeldoc&type=Date"/>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Byaidu/PDFMathTranslate&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Byaidu/PDFMathTranslate&type=Date" />
+   <img alt="星标历史图表" src="https://api.star-history.com/svg?repos=Byaidu/PDFMathTranslate&type=Date"/>
  </picture>
 </a>
